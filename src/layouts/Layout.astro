@@ -1,3 +1,10 @@
+---
+import Header from "../components/React/Header/Header";
+
+const backgroundColor = "hsla(0, 0%, 100%, 1)";
+const foregroundColor = "hsla(0, 0%, 97%, 1)";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,13 +15,13 @@
 		<title>Nihal K - Developer | Javascript & MERN</title>
 	</head>
 	<body>
-		<header>Header</header>
+		<Header />
 		<slot />
 		<footer>Footer</footer>
 	</body>
 </html>
 
-<style>
+<style define:vars={{ backgroundColor, foregroundColor }}>
 	html,
 	body {
 		height: auto;
@@ -25,9 +32,11 @@
 		flex-direction: column;
 
 		overflow-x: hidden;
+
+		background-color: var(--backgroundColor);
 	}
 
-	* {
+	:global(*) {
 		padding: 0;
 		margin: 0;
 
@@ -36,13 +45,7 @@
 		-moz-box-sizing: border-box;
 	}
 
-	header,
 	footer {
 		text-align: center;
-	}
-
-	:global(main) {
-		display: grid;
-		place-items: center;
 	}
 </style>
