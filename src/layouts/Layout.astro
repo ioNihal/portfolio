@@ -5,18 +5,44 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Nihal K - Developer | Javascript & MERN</title>
 	</head>
 	<body>
+		<header>Header</header>
 		<slot />
+		<footer>Footer</footer>
 	</body>
 </html>
 
 <style>
 	html,
 	body {
+		height: auto;
+		min-height: 100vh;
+		width: 100vw;
+
+		display: flex;
+		flex-direction: column;
+
+		overflow-x: hidden;
+	}
+
+	* {
+		padding: 0;
 		margin: 0;
-		width: 100%;
-		height: 100%;
+
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
+
+	header,
+	footer {
+		text-align: center;
+	}
+
+	:global(main) {
+		display: grid;
+		place-items: center;
 	}
 </style>
